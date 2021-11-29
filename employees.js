@@ -25,11 +25,12 @@ class Employee {
         this.name = name
         this.shifts = shifts
     }
-    getSchedule(){
-        console.log(`${this.name} works on ${this.shifts}`)
-    }
-}
-let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
+    getSchedule() {
+        console.log(this.name, "works on", this.shifts)
+    
+}}
+
+
 
 /*
     Create a new instance of your class.
@@ -43,6 +44,10 @@ let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 
 //CODE HERE
 
+empOne = new Employee("Jess", "weekday mornings, weekday afternoons")
+
+console.log(empOne)
+
 /*
     Call the `getSchedule` method on the
     `empOne` object.
@@ -52,6 +57,7 @@ let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 
 //CODE HERE
 
+empOne.getSchedule()
 
 /*
     Make a copy of the empOne object
@@ -67,6 +73,12 @@ let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 
 //CODE HERE
 
+
+empOne['name'] = "Nick";
+
+let empTwo = empOne;
+
+console.log(empTwo)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -94,6 +106,21 @@ let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 
 //CODE HERE
 
+let employees = [];
+
+class Manager extends Employee {
+    constructor(name, shifts, employees = []){
+        super(name);
+        (shifts);
+        employees
+    }
+    getEmployees(){
+        console.log(this.name, "manages", employees)
+    };
+    addEmployee(emp){
+        employees.push(emp);
+        console.log(employees)    }
+}
 
 
 /*
@@ -108,14 +135,18 @@ let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 */
 
 //CODE HERE
+manager = new Manager("Winston", "weekday mornings, weekday afternoons", "Cece, Schmidt")
 
-
+manager.addEmployee("Cece")
+manager.addEmployee("Schmidt")
 /*
     Call the `getEmployees` method on the
     `manager` object.  
 */
 
 //CODE HERE
+
+manager.getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -125,6 +156,8 @@ let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 
 //CODE HERE 
 
+manager.addEmployee("coach")
+
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -132,3 +165,5 @@ let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 */
 
 //CODE HERE
+
+manager.getEmployees()

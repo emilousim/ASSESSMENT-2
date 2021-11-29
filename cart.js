@@ -7,7 +7,6 @@
     creating customer objects.  
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Below is a cart array that has food objects
@@ -35,9 +34,10 @@ const cart = [
 
 //CODE HERE
 
+let reduceCart = cart.reduce(function(accumulator, currentValue) {
+    return accumulator + currentValue.price;}, 0);
 
-
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+    const summedPrice = console.log(reduceCart)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -57,7 +57,12 @@ const cart = [
 
 //CODE HERE
 
+function calcFinalPrice(cartTotal, couponValue, tax){
+let grandTotal = ((cartTotal * tax) + cartTotal - (couponValue))
+return grandTotal
+}
 
+console.log(calcFinalPrice(5, .07, .1))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -81,7 +86,7 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+my customer object would contain customer id, first name, last name, and the items in cart, price of items. customer id will be an incrementing integer in case someone has the same first/last name. each customer will have an individual id. first/last name will be a string because it's a word and text can go into strings. items in cart will be a string as well because it's text. price of items will be a float because the price will always be a number. 
 */
 
 /*
@@ -90,3 +95,13 @@ const cart = [
 */
 
 //CODE HERE
+
+let Customer = {
+    customer_id: 1,
+    first_name: "Emily",
+    last_name: "Simpson",
+    itemsInCart: "pizza",
+    itemPrice: 9.99
+}
+
+console.log(Customer)
